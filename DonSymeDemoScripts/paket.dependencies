@@ -1,0 +1,16 @@
+source https://www.nuget.org/api/v2
+
+nuget MathNet.Numerics
+nuget MathNet.Numerics.MKL.Win-x86
+nuget MathNet.Numerics.MKL.Win-x64
+nuget MathNet.Numerics.FSharp
+nuget FSharp.Formatting
+nuget FSharp.Charting
+nuget FSharp.Charting.Gtk
+nuget FSharp.Data
+nuget FSharp.Data.Experimental
+nuget Deedle
+nuget Deedle.RPlugin
+nuget RProvider
+nuget R.NET
+nuget RDotNet.FSharp
