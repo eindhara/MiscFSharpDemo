@@ -8,17 +8,18 @@ open Microsoft.FSharp.Linq
 open Microsoft.FSharp.Data.TypeProviders
 
 type NorthwndDb = 
-    SqlDataConnection<ConnectionString = const (@"AttachDBFileName  = '" + __SOURCE_DIRECTORY__ + @"\data\northwnd.mdf';Server='.\SQLEXPRESS';User Instance=true;;Integrated Security=SSPI"),Pluralize=true>
+    SqlDataConnection<
+        ConnectionString = "Server=LAPTOP-1UC0F0AU;Database=NORTHWND;Trusted_Connection=True;",
+        Pluralize = true>
 
 let db = NorthwndDb.GetDataContext()
 
 let customerNames = 
     query { for c in db.Customers do 
-            where  (c.City = "London")
-            select c.ContactName }
+            //where  (c.City = "London")
+            select (c.ContactName, c.ContactTitle, c.City) 
+        }
     |> teeGrid
-
-
 
 
 let employeesWithEmployees1 = 

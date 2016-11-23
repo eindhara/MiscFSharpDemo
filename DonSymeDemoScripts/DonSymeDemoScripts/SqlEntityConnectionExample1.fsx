@@ -17,7 +17,9 @@ open Microsoft.FSharp.Linq
 open Microsoft.FSharp.Data.TypeProviders
 
 type NorthwndDb = 
-    SqlEntityConnection<ConnectionString = @"AttachDBFileName  = 'C:\projects\openfsharp\Scripts\northwnd.mdf';Server='.\SQLEXPRESS';User Instance=true;Integrated Security=SSPI",Pluralize=true>
+    SqlEntityConnection<
+        ConnectionString = "Server=LAPTOP-1UC0F0AU;Database=NORTHWND;Trusted_Connection=True;",
+        Pluralize = true>
 
 let db = NorthwndDb.GetDataContext()
 
